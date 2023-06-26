@@ -15,8 +15,11 @@ import java.util.stream.IntStream;
 //Refactor this class, improving the code quality
 
 /**
-The expression Consumer<List<String>> represents a functional interface in Java that accepts an argument of type List<String>
-and performs some operation on it without returning a result.
+ *
+ * <br>Question <br>
+ * <br>Refactor the send method in the code below to have good code quality and implement Junit test to test to validate the result.<br>
+ *
+ * <br>The expression Consumer<List<String>> represents a functional interface in Java that accepts an argument of type List<String> and performs some operation on it without returning a result.
  */
 
 class Algorithm {
