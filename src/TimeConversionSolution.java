@@ -2,9 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
 /**
- * <br>Certainly! Let's break down the code `hour = (hour % 12) + (period.equalsIgnoreCase("PM") ? 12 : 0);` and explain its purpose:
+ * <br>Let's break down the code `hour = (hour % 12) + (period.equalsIgnoreCase("PM") ? 12 : 0);` and explain its purpose:
  *<br>
  * <br>1. `(hour % 12)`: This expression calculates the remainder when `hour` is divided by 12. It effectively converts the hour value to a 12-hour format by mapping any value greater than or equal to 12 to the corresponding value in the range 0-11.
  *<br>
@@ -29,20 +28,10 @@ class TimeConversionResult {
         String period = splitTime[2].substring(2, 4);
 
         hour = (hour % 12) + (period.equalsIgnoreCase("PM") ? 12 : 0);
-
-        if (period.equals("AM")) {
-            if (hour == 12) {
-                hour = 0;
-            }
-        } else {
-            if (hour != 12) {
-                hour += 12;
-            }
-        }
-
         return String.format("%02d:%02d:%02d", hour, minute, second);
     }
 }
+
 
 public class TimeConversionSolution {
     public static void main(String[] args) throws IOException {
