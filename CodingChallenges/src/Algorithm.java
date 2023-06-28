@@ -1,14 +1,11 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-//import org.junit.jupiter.api.Test;
-
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 
@@ -29,17 +26,11 @@ class Algorithm {
         if (number == null) {
             throw new IllegalArgumentException("No number provided");
         }
-
-        int num = Integer.parseInt(number);
-        if (num <= 0 || num > 15) {
+        int integerNumber = Integer.parseInt(number);
+        if (integerNumber <= 0 || integerNumber > 15) {
             throw new IllegalArgumentException(number + " is not supported");
         }
-
-        List<String> result = IntStream.rangeClosed(1, num)
-                .filter(i -> num % i == 0)
-                .mapToObj(String::valueOf)
-                .collect(Collectors.toList());
-
+        List<String> result = IntStream.rangeClosed(1, integerNumber).filter(i -> integerNumber % i == 0).mapToObj(String::valueOf).toList();
         consumer.accept(result);
     }
 
